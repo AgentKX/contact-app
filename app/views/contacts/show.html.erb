@@ -1,0 +1,10 @@
+<h1>Contact</h1>
+
+
+<% @one_contacts.each do |contact| %>
+<h2><%= contact.first_name %></h2>
+<h2><%= contact.last_name %></h2>
+<h3><%= contact.occupation %></h3>
+<h3><%= contact.fav_food %></h3>
+
+<% end %>
