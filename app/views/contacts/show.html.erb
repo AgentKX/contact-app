@@ -1,10 +1,9 @@
 <h1>Contact</h1>
 
-
-<% @one_contacts.each do |contact| %>
-<h2><%= contact.first_name %></h2>
-<h2><%= contact.last_name %></h2>
-<h3><%= contact.occupation %></h3>
-<h3><%= contact.fav_food %></h3>
-
-<% end %>
+  <h3>First Name: <%= @contact.first_name %></h3>
+  <h3>Last Name: <%= @contact.last_name %></h3>
+  <h5>Occupation: <%= @contact.occupation %></h5>
+  <h5>Favorite Food: <%= @contact.fav_food %></h5>
+  <%= link_to "Edit Contact", "/contacts/#{@contact.id}/edit" %>
+  <%= link_to "Delete Contact", "/contacts/#{@contact.id}", method: :delete %>
+  <%= link_to "Back to all contacts", "/contacts" %>

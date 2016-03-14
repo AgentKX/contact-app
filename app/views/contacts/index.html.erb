@@ -1,11 +1,12 @@
-<h1>All Contacts</h1>
-
-
-<% @contacts.each do |contact| %>
-<h2><%= contact.first_name %></h2>
-<h2><%= contact.last_name %></h2>
-<h3><%= contact.occupation %></h3>
-<h3><%= contact.fav_food %></h3>
-
-
-<% end %>
+<%= link_to "Create a contact", "/contacts/new" %>
+<div class="row">
+  <% @contacts.each do |contact| %>
+    <div class="col-md-4">
+      <div class="well">
+        <h3>First Name: <%= link_to contact.first_name, "/contacts/#{contact.id}" %></h3>
+        <h3>Last Name: <%= contact.last_name %></h3>
+        <p>Updated at: <%= contact.friendly_updated_at %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
