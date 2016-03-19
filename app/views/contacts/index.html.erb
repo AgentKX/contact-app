@@ -1,4 +1,4 @@
-<%= link_to "Create a contact", "/contacts/new" %>
+
 <div class="row">
   <% @contacts.each do |contact| %>
     <div class="col-md-4">
@@ -9,4 +9,5 @@
       </div>
     </div>
   <% end %>
+ <h4><%= link_to "Create a contact", "/contacts/new" %></h4>
 </div>
