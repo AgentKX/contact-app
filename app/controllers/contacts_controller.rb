@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
  
-   def index
+  def index
     @contacts = Contact.all
     render 'index.html.erb'
   end
@@ -16,12 +16,13 @@ class ContactsController < ApplicationController
       last_name: params[:last_name],
       occupation: params[:occupation],
       fav_food: params[:fav_food],
-      latitude: coordinates[0],
-      longitude: coordinates[1]
-      )
-      flash[:success] = "New contact created!"
-      redirect_to "/contacts/#{contact.id}"
-end
+      latitude: coordinates[1],
+      longitude: coordinates[0],
+      user_id: current_user.id
+    )
+    flash[:success] = "New contact created!"
+    redirect_to "/contacts/#{contact.id}"
+  end
 
   def show
     contact_id = params[:id]
@@ -55,20 +56,7 @@ end
     flash[:warning] = "Contact deleted!"
     redirect_to "/contacts"
   end
-
 end 
-
-
-
-
-
-
-
-
-
-
-
-
 
 #   
 #   def enter_num
